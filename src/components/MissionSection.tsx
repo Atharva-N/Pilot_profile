@@ -7,7 +7,7 @@ import { RefreshCcw } from "lucide-react";
 const stats = [
   { value: "9.35", label: "CGPA", unit: "" },
   { value: "8+", label: "AWARDS", unit: "" },
-  { value: "CLASS 1", label: "MEDICAL STATUS", unit: "" },
+  { value: "CLASS 2", label: "MEDICAL STATUS", unit: "" },
   { value: "IN PROGRESS", label: "FLIGHT HOURS", unit: "" },
 ];
 
