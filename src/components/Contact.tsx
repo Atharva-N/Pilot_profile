@@ -2,41 +2,39 @@
 
 import { Linkedin, Mail, Send } from "lucide-react";
 import { useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 
 export const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!form.current) return;
+
     setIsSubmitting(true);
 
-    emailjs
-      .sendForm(
-        "service_fy0i26f",
-        "template_opel3me",
-        form.current,
-        "B3Gzs2zTEirnJlbfV"
-      )
-      .then(
-        (result) => {
-          console.log("SUCCESS!", result.text);
-          alert("Message Transmitted! Thank you for reaching out. I'll get back to you soon.");
-          if (e.target instanceof HTMLFormElement) {
-            e.target.reset();
-          }
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-          alert("Uh oh! Something went wrong. There was a problem sending your message. Please try again.");
-        }
-      )
-      .finally(() => {
-        setIsSubmitting(false);
+    try {
+      const formData = new FormData(form.current);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
       });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
+      alert("Message sent successfully. Thank you for reaching out.");
+      form.current.reset();
+    } catch (error) {
+      console.error(error);
+      alert("Message could not be sent right now. Please email nagarsekaratharva@gmail.com directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

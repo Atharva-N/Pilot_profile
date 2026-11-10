@@ -81,10 +81,10 @@ export const About = () => {
             <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 rounded-full bg-sky-400 shadow-[0_0_12px_rgba(56,189,248,0.7)]" />
             <div className="text-lg text-slate-600 dark:text-white/65 leading-[1.95] font-light space-y-5">
               <p>
-                I am a highly motivated aspiring commercial pilot with an unwavering commitment to aviation safety and operational discipline. I excel in high responsibility environments requiring calm decision making, effective communication, and acute situational awareness.
+                I am currently a cadet pilot with Air India, committed to aviation safety, operational discipline, and excellence in high-responsibility environments. I value calm decision-making, clear communication, and situational awareness as the foundation of professional flight operations.
               </p>
               <p>
-                Dedicated to continuous learning and teamwork, I uphold the highest standards of professionalism in flight operations. Simultaneously, pursuing my B.Tech in Artificial Intelligence & Data Science at DJSCE (CGPA 9.35) positions me as a next-generation aviator,ready to leverage technology to revolutionize the aviation industry.
+                I hold DGCA Class 1 and DGCA Class 2 medical certifications, along with FAA Class 1 medical clearance, and I have completed my ground classes. Alongside my aviation training, I am pursuing my B.Tech in Artificial Intelligence & Data Science at DJSCE (CGPA 9.35), preparing to bring technology and flight discipline together in the future of aviation.
               </p>
               <div className="pt-4">
                 <a
